@@ -21,8 +21,15 @@ public class DisplayElements extends JPanel {
 private static final long serialVersionUID = 1L;
 char[][] tab= new char[20][20];
 public DisplayElements(){
-	
-	this.Gettab();
+
+	for(int i = 0; i < 20; i++)
+	{    
+	  for(int j = 0; j < 20; j++)
+	  {
+	    System.out.print(tab[i][j]);       
+	  }
+	  System.out.println("");     
+	}
 }
 	
 	
@@ -119,7 +126,8 @@ public static char[][] move(int a, char[][] tab){
 		case 4: depY=-1; depX=0;break;
 		default:break;
 	}
-	
+	 System.out.println(depX);
+	 System.out.println(depY);
 	//if(a==1) { //left
 	int found=0;
 		for(int y = 0; y < 20; y++) {
@@ -153,12 +161,20 @@ public static char[][] move(int a, char[][] tab){
             		}
             		found=1;
             		break;
+            	
             	}
+            	System.out.println(tab[x][y]);
             }
         }
+		
+			
+		
+		
 		return tab;
 
 
-}}
+}
+
+}
 
 

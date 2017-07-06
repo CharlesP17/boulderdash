@@ -3,10 +3,13 @@ package view;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Keyinput implements KeyListener 
+import javax.swing.JPanel;
+
+public class Keyinput extends JPanel implements KeyListener 
 
 {
-
+DisplayElements ntr = new DisplayElements();
+char[][] maptab = ntr.Gettab();
 	
 	@Override
 	public void keyPressed(KeyEvent k) {
@@ -18,24 +21,24 @@ public class Keyinput implements KeyListener
 		switch (key) {
 			case KeyEvent.VK_DOWN : 
 				
-				//this.maptab = DisplayElements.move(3, this.maptab);
+				this.maptab = DisplayElements.move(3, this.maptab);
 				System.out.println("bas");
-				//repaint();
+				repaint();
 				break;
 			case KeyEvent.VK_UP:
-				//this.maptab = DisplayElements.move(4, this.maptab);
+				this.maptab = DisplayElements.move(4, this.maptab);
 				System.out.println("haut");
-				//repaint();
+				repaint();
 				break;
 			case KeyEvent.VK_RIGHT:
-				//this.maptab = DisplayElements.move(2, this.maptab);
+				this.maptab = DisplayElements.move(2, this.maptab);
 				System.out.println("droite");
-				//repaint();
+				repaint();
 				break;
 			case KeyEvent.VK_LEFT:
-				//this.maptab = DisplayElements.move(1, this.maptab);
+				this.maptab = DisplayElements.move(1, this.maptab);
 				System.out.println("gauche");
-				//repaint();
+				repaint();
 				break;}
 	}
 

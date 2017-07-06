@@ -10,8 +10,7 @@ import javax.swing.JFrame;
 
 public class Window   {
 	
-DisplayElements ntr = new DisplayElements();
-char[][] maptab = ntr.Gettab();
+
 
 	
 	/** Create the window*/

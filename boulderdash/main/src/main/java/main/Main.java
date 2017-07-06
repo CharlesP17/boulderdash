@@ -6,6 +6,7 @@ import controller.ControllerFacade;
 import model.ModelFacade;
 
 import model.dao.Connect;
+import view.DisplayElements;
 import view.ViewFacade;
 import view.Window;
 
@@ -29,6 +30,15 @@ public abstract class Main {
     public static void main(final String[] args) {
         //Connect ok = new Connect();
         Window lol = new Window();
+        DisplayElements ok = new DisplayElements();
+        char[][] maptablo = ok.Gettab();
+        for (int i=0; i<20; i++){
+        	for(int j=0; j<20; j++){
+        		
+        		System.out.println(maptablo[i][j]);	
+        	}
+        }
+        
     
     }
 
