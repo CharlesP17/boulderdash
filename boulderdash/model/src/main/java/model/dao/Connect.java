@@ -13,13 +13,13 @@ public class Connect
 {
 	public String map = null;
 
-public Connect(){
+public Connect(int idlevel){
 	
-	this.Connection();
+	this.Connection(idlevel);
 }
 
 
-public void Connection()
+public void Connection(int idlevel)
 {
 	String url = "jdbc:mysql://localhost/boulderdash?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	String login ="root";
@@ -33,7 +33,7 @@ try
 {
 	cn = DriverManager.getConnection(url, login, passwd);
 	st = (Statement) cn.createStatement();
-	String sql = "call GetMap(1)";
+	String sql = "call GetMap("+idlevel+")";
 	rs = st.executeQuery(sql);
 	while (rs.next()){
 		map=rs.getString("Map");}

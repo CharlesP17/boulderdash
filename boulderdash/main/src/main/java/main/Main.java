@@ -28,8 +28,11 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        //Connect ok = new Connect();
-        Window lol = new Window();
+    	int idlevel = 1;
+        Connect connection = new Connect(idlevel);
+        Controller controller = new Controller();
+        
+        /*Window lol = new Window();
         DisplayElements ok = new DisplayElements();
         char[][] maptablo = ok.Gettab();
         for (int i=0; i<20; i++){
@@ -37,9 +40,9 @@ public abstract class Main {
         		
         		System.out.println(maptablo[i][j]);	
         	}
-        }
+        }*/
         
     
     }
-
 }
+
