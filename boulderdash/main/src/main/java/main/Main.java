@@ -30,7 +30,7 @@ public abstract class Main {
     public static void main(final String[] args) {
     	int idlevel = 1;
         Connect connection = new Connect(idlevel);
-        Controller controller = new Controller();
+        //Controller controller = new Controller();
         
         /*Window lol = new Window();
         DisplayElements ok = new DisplayElements();
