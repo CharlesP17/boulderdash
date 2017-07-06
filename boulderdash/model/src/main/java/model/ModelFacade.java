@@ -45,4 +45,33 @@ public class ModelFacade implements IModel {
         return ExampleDAO.getAllExamples();
     }
     public ArrayList<Elements> IDElements;
+	@Override
+	public void UpdatePositionX() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void UpdatePostitionY() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void GetPositionX() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void GetPositionY() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ArrayList<Elements> GetIDElements() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

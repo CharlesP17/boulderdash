@@ -4,7 +4,10 @@ import java.sql.SQLException;
 
 import controller.ControllerFacade;
 import model.ModelFacade;
+
+import model.dao.Connect;
 import view.ViewFacade;
+import view.Window;
 
 /**
  * <h1>The Class Main.</h1>
@@ -13,6 +16,9 @@ import view.ViewFacade;
  * @version 1.0
  */
 public abstract class Main {
+	
+	
+
 
     /**
      * The main method.
@@ -21,13 +27,9 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
-
-        try {
-            controller.start();
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }
+        //Connect ok = new Connect();
+        Window lol = new Window();
+    
     }
 
 }
