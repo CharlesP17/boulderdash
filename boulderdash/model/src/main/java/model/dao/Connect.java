@@ -21,7 +21,7 @@ public Connect(){
 
 public void Connection()
 {
-	String url = "jdbc:mysql://localhost/boulderdash?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	String url = "jdbc:mysql://localhost/boulderdash_1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	String login ="root";
 	String passwd= "";
 	Connection cn = null;

@@ -5,6 +5,8 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
+import model.Deplacement;
+
 public class Keyinput extends JPanel implements KeyListener 
 
 {

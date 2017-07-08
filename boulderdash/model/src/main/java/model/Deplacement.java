@@ -1,4 +1,4 @@
-package view;
+package model;
 
 public class Deplacement 
 {
@@ -63,12 +63,33 @@ public class Deplacement
 			            System.out.println("found =" +found);
 			            break;
 			            }
+	            		else if (levelmap[x+depX][y+depY] == '4')
+	            		{
+	            		levelmap[x][y] = '1';
+			            levelmap[x+depX][y+depY] = '6';	
+	            		v = 1;
+			            System.out.println("diams =" +diams);
+	            		found =1;
+			            System.out.println("found =" +found);
+			            break;
+			            }
 	            	
 	                found =1;
 			        System.out.println("found =" +found);	
 		            break;
 	            	}
-	            	
+	            	else if (levelmap[x][y]=='5' ){
+	            		if (levelmap[x+1][y] =='1')
+	            		{
+	            		levelmap[x][y] = '1';
+	            		try {
+	            	    Thread.sleep(3000);}         
+	            	    catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+	            		levelmap[x+1][y] ='5';
+	            		break;
+	            		}
+	            
+	            	}
 	            	}
 	            	
 	            	}
