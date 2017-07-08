@@ -11,15 +11,15 @@ import com.mysql.cj.api.jdbc.Statement;
 
 public class Connect
 {
-	public String map = null;
+	public String wordmap = null;
 
-public Connect(int idlevel){
+public Connect(){
 	
-	this.Connection(idlevel);
+	this.Connection();
 }
 
 
-public void Connection(int idlevel)
+public void Connection()
 {
 	String url = "jdbc:mysql://localhost/boulderdash?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	String login ="root";
@@ -33,12 +33,12 @@ try
 {
 	cn = DriverManager.getConnection(url, login, passwd);
 	st = (Statement) cn.createStatement();
-	String sql = "call GetMap("+idlevel+")";
+	String sql = "call GetMap(1)";
 	rs = st.executeQuery(sql);
 	while (rs.next()){
-		map=rs.getString("Map");}
+		wordmap=rs.getString("Map");}
 	
-System.out.println(map);
+//System.out.println(wordmap);
 	
 	
 }
@@ -51,6 +51,6 @@ catch (SQLException e) {
 
 }
 public String Getmap() {
-	return this.map;
+	return this.wordmap;
 	
 }}

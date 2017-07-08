@@ -1,22 +1,28 @@
 package view;
 
+import java.awt.Frame;
+import java.awt.Panel;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 
 
 
 public class Window   {
 	
+	DisplayElements panelwindow;
+	JFrame windo;
 
 
 	
 	/** Create the window*/
 		public Window()
 		{
-		JFrame windo = new JFrame();
+			this.windo = new JFrame();
+			this.panelwindow = new DisplayElements();
 		/** Title */
 		windo.setTitle("BOULDER DASH");
 		/** Size */
@@ -26,7 +32,7 @@ public class Window   {
 		/** CloseOperation */
 		windo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		/** ContentPane */
-		windo.setContentPane(new DisplayElements());
+		windo.setContentPane(panelwindow);
 		
 		/** visibility */
 		windo.setVisible(true);
@@ -34,11 +40,16 @@ public class Window   {
 		
 		}
 		
+		public void UpdateMap(char[][] levelmap){
 
+			
+			panelwindow.setMAP(levelmap,panelwindow);
+			windo.setContentPane(panelwindow);
+			//WindowPanel.setFirstTime(false);
 	
 
 
 	
 
 
-	}
+	}}

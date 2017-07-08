@@ -2,6 +2,7 @@ package main;
 
 import java.sql.SQLException;
 
+import controller.Controller;
 import controller.ControllerFacade;
 import model.ModelFacade;
 
@@ -28,12 +29,13 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-    	int idlevel = 1;
-        Connect connection = new Connect(idlevel);
-        //Controller controller = new Controller();
+    	
+        //Connect connection = new Connect();
+    	//Connect con = new Connect();
+        Controller controller = new Controller(DisplayElements.levelmap);
         
-        /*Window lol = new Window();
-        DisplayElements ok = new DisplayElements();
+       // Window lol = new Window();
+        /*DisplayElements ok = new DisplayElements();
         char[][] maptablo = ok.Gettab();
         for (int i=0; i<20; i++){
         	for(int j=0; j<20; j++){

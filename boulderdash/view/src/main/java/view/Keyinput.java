@@ -21,22 +21,22 @@ char[][] maptab = ntr.Gettab();
 		switch (key) {
 			case KeyEvent.VK_DOWN : 
 				
-				this.maptab = DisplayElements.move(3, this.maptab);
+				this.maptab = Deplacement.move(3, this.maptab);
 				System.out.println("bas");
 				repaint();
 				break;
 			case KeyEvent.VK_UP:
-				this.maptab = DisplayElements.move(4, this.maptab);
+				this.maptab = Deplacement.move(4, this.maptab);
 				System.out.println("haut");
 				repaint();
 				break;
 			case KeyEvent.VK_RIGHT:
-				this.maptab = DisplayElements.move(2, this.maptab);
+				this.maptab = Deplacement.move(2, this.maptab);
 				System.out.println("droite");
 				repaint();
 				break;
 			case KeyEvent.VK_LEFT:
-				this.maptab = DisplayElements.move(1, this.maptab);
+				this.maptab = Deplacement.move(1, this.maptab);
 				System.out.println("gauche");
 				repaint();
 				break;}
