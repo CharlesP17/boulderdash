@@ -33,6 +33,7 @@ public DisplayElements(){
 	
 	
 /** allow the picture to display on the panel*/
+
 public void paintComponent(Graphics g)
 {	
 
@@ -89,28 +90,31 @@ break;
 }
 		
 if (map[j][i]=='5' ){
-		if (map[j+1][i] =='1')
-		{
+		if (map[j+1][i]=='1' && map[j+2][i]=='6'){
+    		map[j][i] = '1';
+    		map[j+1][i]= '1';
+    		map[j+2][i] = '5';}
+		
+		else if (map[j+1][i]=='5' && map[j][i+1]=='1' && map[j+1][i+1] =='6'){
+				map[i][j]='1';
+				map[j+1][i+1] ='5';}
+		else if (map[j+1][i]=='5' && map[j][i+1]=='1' && map[j+1][i+1] =='1'){
+			map[i][j]='1';
+			map[j+1][i+1] ='5';}
+		else if (map[j+1][i]=='1'){
+					map[j][i] = '1';
+					map[j+1][i]= '5';
+					}
 		
 		
-		map[j][i] = '1';
-		map[j+1][i] ='5';}
-		else if (map[j+1][i] =='6')
-		{
-		try {Thread.sleep(1000);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}	
-		}
-		
-		else if (map[j+1][i]=='1' && map[j+2][i]=='6'){
-			System.out.println("ça marche ma couille");
-		}}
-
+}
 else if (map[j][i]=='4' ){
-	if (map[j+1][i] =='1')
+	if (map[j+1][i]=='1' && map[j+2][i]=='6'){
+		map[j][i] = '1';
+		map[j+1][i]= '1';
+		map[j+2][i] = '4';}
+	else if (map[j+1][i] =='1')
 	{
-	
-	try {	
-    Thread.sleep(100);}         
-    catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 	map[j][i] = '1';
 	map[j+1][i] ='4';}}
 
@@ -152,7 +156,7 @@ else if (map[j][i]=='7' ){
 	
 	
 	}
-	if (gameover == 1 )
+if (gameover == 1 )
 	{for(int m = 0; m < 20; m++) {
 	  for(int t =0;  t< 20; t++) {
 		  	if (map[m][t]=='6'){map[m][t]='8';}
