@@ -5,6 +5,7 @@ public class Deplacement
 	public static char[][] move(int a, char[][] levelmap){
 		//System.out.println("Move !");
 		
+		
 		int depX = 0;
 		int depY = 0;
 		switch(a) {
@@ -23,8 +24,14 @@ public class Deplacement
 		int wall=0;
 		int diams = 0;
 		int v = 1;
+		char bloc =0;
+		
+            	
+            
 			for(int y = 0; y < 20; y++) {
 	            for(int x =0; x < 20; x++) {
+	            	
+	            
 	            	if (levelmap[x][y]=='6' && found ==0)
 	            	{
 	            		if (levelmap[x+depX][y+depY] == '2')
@@ -45,14 +52,15 @@ public class Deplacement
 			            System.out.println("found =" +found);
 			            break;
 			            }
-	            		else if (levelmap[x+depX][y+depY] == '5')
-	            		{
+	            		else if (levelmap[x+depX][y+depY] == '5' && levelmap[x+depX*2][y+depY*2]=='1')
+	            		{levelmap[x][y] = '1';
+	            		levelmap[x+depX][y+depY]= '6';
+	            		levelmap[x+depX*2][y+depY*2] = '5';
 	            		rock = 1;
 			            System.out.println("rock =" +rock);
 	            		found =1;
 			            System.out.println("found =" +found);
-			            break;
-			            }
+			            break;}
 	            		else if (levelmap[x+depX][y+depY] == '1')
 	            		{
 	            		levelmap[x][y] = '1';
@@ -78,25 +86,32 @@ public class Deplacement
 			        System.out.println("found =" +found);	
 		            break;
 	            	}
-	            	else if (levelmap[x][y]=='5' ){
+	            	/*else if (levelmap[x][y]=='5' ){
 	            		if (levelmap[x+1][y] =='1')
 	            		{
 	            		levelmap[x][y] = '1';
 	            		try {
-	            	    Thread.sleep(3000);}         
+	            	    Thread.sleep(300);}         
 	            	    catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 	            		levelmap[x+1][y] ='5';
-	            		break;
+	            		if(levelmap[x+1][y]=='6'){
+	            			System.out.println("perdu");
 	            		}
+	            		
+	            		break;
+	            		}*/
 	            
 	            	}
 	            	}
 	            	
-	            	}
+	            	
 	            
 	            
-	            
+	  
 	               
 	       
 			return levelmap;
-}}
+}
+	
+
+}

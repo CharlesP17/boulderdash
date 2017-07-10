@@ -32,7 +32,8 @@ public abstract class Main {
     	
         //Connect connection = new Connect();
     	//Connect con = new Connect();
-        Controller controller = new Controller(DisplayElements.levelmap);
+    	Connect con = new Connect();
+        Controller controller = new Controller(con.levelmap);
         
        // Window lol = new Window();
         /*DisplayElements ok = new DisplayElements();

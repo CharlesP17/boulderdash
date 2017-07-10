@@ -28,17 +28,17 @@ char[][] maptab = ntr.Gettab();
 				repaint();
 				break;
 			case KeyEvent.VK_UP:
-				this.maptab = Deplacement.move(4, this.maptab);
+				//this.maptab = Deplacement.move(4, this.maptab);
 				System.out.println("haut");
 				repaint();
 				break;
 			case KeyEvent.VK_RIGHT:
-				this.maptab = Deplacement.move(2, this.maptab);
+				//this.maptab = Deplacement.move(2, this.maptab);
 				System.out.println("droite");
 				repaint();
 				break;
 			case KeyEvent.VK_LEFT:
-				this.maptab = Deplacement.move(1, this.maptab);
+				//this.maptab = Deplacement.move(1, this.maptab);
 				System.out.println("gauche");
 				repaint();
 				break;}

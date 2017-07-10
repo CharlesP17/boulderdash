@@ -5,8 +5,6 @@ public class Rock extends Elements{
 	{
 		
 	}
-	public void getElements()
-	{
-		
-	}
+	
+public void fall(){}
 }

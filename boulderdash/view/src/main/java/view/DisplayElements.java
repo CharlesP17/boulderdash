@@ -2,11 +2,15 @@ package view;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
 
 
 import javax.swing.JPanel;
+
+import model.Deplacement;
 import model.dao.Connect;
 
 import javax.imageio.ImageIO;
@@ -17,19 +21,12 @@ import javax.imageio.ImageIO;
 //test
 
 
-public class DisplayElements extends JPanel {
+public class DisplayElements extends JPanel implements KeyListener {
 private static final long serialVersionUID = 1L;
-public static char[][] levelmap= new char[20][20];
+public char[][] map;
 public DisplayElements(){
 
-	for(int i = 0; i < 20; i++)
-	{    
-	  for(int j = 0; j < 20; j++)
-	  {
-	    System.out.print(levelmap[i][j]);       
-	  }
-	  System.out.println("");     
-	}
+	
 }
 	
 	
@@ -37,32 +34,21 @@ public DisplayElements(){
 public void paintComponent(Graphics g)
 {	
 
-/** get the map*/
 
-
-
-Connect test = new Connect();
-	test.Getmap();
-	//System.out.println(test.Getmap());
-String str = test.Getmap();
-	
-
-
-	/** split the map in differents part and pull it the board*/
-String[] splitArray = str.split(";");
-for(int x = 0; x<20;x++){
-for(int y = 0; y<20;y++){
-		/** Detect the position of each character in the board*/
-	levelmap[x][y]=splitArray[x].charAt(y);} 
 
 
 
 try{
-	for(int i=0; i<levelmap.length; i++){
-	for(int j=0; j<levelmap.length; j++){
+	for(int i=0; i<map.length; i++){
+	for(int j=0; j<map.length; j++){
+		
+		
+                
+ 
+            
 
 /** replace each letter by a picture*/		
-switch (levelmap[j][i])
+switch (map[j][i])
 {
 case '1':
 Image img1 = ImageIO.read(new File("1.jpg"));
@@ -95,9 +81,30 @@ break;
 
 
 }
+		
+if (map[j][i]=='5' ){
+		if (map[j+1][i] =='1')
+		{
+		
+		try {	
+	    Thread.sleep(100);}         
+	    catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+		map[j][i] = '1';
+		map[j+1][i] ='5';}
+		else if (map[j+1][i] =='6')
+		{
+		try {Thread.sleep(1000);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}	
+		}
+		
+		else if (map[j+1][i]=='1' && map[j+2][i]=='6'){
+			System.out.println("ça marche ma couille");
+		}
 }
 
-}}
+	
+	
+}}}
+
 catch(IOException e)
 {
 		e.printStackTrace();
@@ -105,14 +112,65 @@ catch(IOException e)
 }
 
 
-}}
-public void setMAP(char[][] tab, DisplayElements display)
+
+/*for(int v = 0; v < this.map.length; v++) {
+    for(int z =0; z < this.map.length; z++) {
+         
+        System.out.println(this.map[v][z]);}
+    	System.out.println("");
+		}*/
+}
+public void setMAP(char[][] map, DisplayElements panelwindow)
 {
-	this.levelmap=levelmap;
+	this.map=map;
 }
 public char [][] Gettab()
 {
-	return this.levelmap;
+	return this.map;
+}
+
+
+@Override
+public void keyPressed(KeyEvent k) {
+	// TODO Auto-generated method stub
+	int key = k.getKeyCode();
+	switch (key) {
+		case KeyEvent.VK_DOWN : 
+			
+			this.map = Deplacement.move(3, this.map);
+			System.out.println("bas");
+			repaint();
+			break;
+		case KeyEvent.VK_UP:
+			this.map = Deplacement.move(4, this.map);
+			System.out.println("haut");
+			repaint();
+			break;
+		case KeyEvent.VK_RIGHT:
+			this.map = Deplacement.move(2, this.map);
+			System.out.println("droite");
+			repaint();
+			break;
+		case KeyEvent.VK_LEFT:
+			this.map = Deplacement.move(1, this.map);
+			System.out.println("gauche");
+			repaint();
+			break;}
+}
+
+
+
+@Override
+public void keyReleased(KeyEvent arg0) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+@Override
+public void keyTyped(KeyEvent arg0) {
+	// TODO Auto-generated method stub
+	
 }
 
 		

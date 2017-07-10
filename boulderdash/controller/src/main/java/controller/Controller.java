@@ -11,7 +11,7 @@ public class Controller
 	gameRunning = true;
 	this.wind = new Window();
 	this.map=levelmap;
-	//this.Gameloop(this.map);
+	this.Gameloop(this.map);
 	
 	}
 	
@@ -20,7 +20,7 @@ public void Gameloop(char[][]levelmap)
 	while (gameRunning) {
 	this.wind.UpdateMap(levelmap);
 	try {
-	    Thread.sleep(1000);                 //1000 milliseconds is one second.
+	    Thread.sleep(200);                 //1000 milliseconds is one second.
 	} catch(InterruptedException ex) {
 	    Thread.currentThread().interrupt();
 	}

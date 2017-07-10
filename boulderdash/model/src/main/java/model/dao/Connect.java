@@ -10,7 +10,8 @@ import com.mysql.cj.api.jdbc.Statement;
 
 
 public class Connect
-{
+{   
+	public char levelmap[][];
 	public String wordmap = null;
 
 public Connect(){
@@ -33,14 +34,11 @@ try
 {
 	cn = DriverManager.getConnection(url, login, passwd);
 	st = (Statement) cn.createStatement();
-	String sql = "call GetMap(1)";
+	String sql = "call GetMap(4)";
 	rs = st.executeQuery(sql);
 	while (rs.next()){
 		wordmap=rs.getString("Map");}
-	
-//System.out.println(wordmap);
-	
-	
+	this.split();	
 }
 catch (SQLException e) {
 	// TODO Auto-generated catch block
@@ -50,7 +48,23 @@ catch (SQLException e) {
 	
 
 }
-public String Getmap() {
+public void split(){
+	this.levelmap = new char[20][20];
+	String str = this.wordmap;
+	String[] splitArray = str.split(";");
+	for(int x = 0; x<20;x++){
+	for(int y = 0; y<20;y++){
+		levelmap[x][y]=splitArray[x].charAt(y);}}
+	
+/*for(int i = 0; i < this.levelmap.length; i++) {
+for(int j =0; j < this.levelmap.length; j++) {
+System.out.print(this.levelmap[i][j]);}
+System.out.println("");}*/
+}
+
+
+
+/*public String Getmap() {
 	return this.wordmap;
 	
-}}
+}*/}

@@ -36,14 +36,14 @@ public class Window   {
 		
 		/** visibility */
 		windo.setVisible(true);
-		windo.addKeyListener(new Keyinput());
+		windo.addKeyListener(panelwindow);
 		
 		}
 		
-		public void UpdateMap(char[][] levelmap){
+		public void UpdateMap(char[][] map){
 
 			
-			panelwindow.setMAP(levelmap,panelwindow);
+			panelwindow.setMAP(map,panelwindow);
 			windo.setContentPane(panelwindow);
 			//WindowPanel.setFirstTime(false);
 	
