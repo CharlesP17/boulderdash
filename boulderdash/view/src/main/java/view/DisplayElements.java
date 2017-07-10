@@ -23,6 +23,7 @@ import javax.imageio.ImageIO;
 
 public class DisplayElements extends JPanel implements KeyListener {
 private static final long serialVersionUID = 1L;
+int monster =0;
 public char[][] map;
 public DisplayElements(){
 
@@ -78,6 +79,10 @@ case '7':
 Image img7 = ImageIO.read(new File("7.jpg"));
 g.drawImage(img7, i*16, j*16, null);
 break;
+case '8':
+Image img8 = ImageIO.read(new File("8.jpg"));
+g.drawImage(img8, i*16, j*16, null);
+break;
 
 
 }
@@ -98,8 +103,48 @@ if (map[j][i]=='5' ){
 		
 		else if (map[j+1][i]=='1' && map[j+2][i]=='6'){
 			System.out.println("ça marche ma couille");
-		}
-}
+		}}
+
+else if (map[j][i]=='4' ){
+	if (map[j+1][i] =='1')
+	{
+	
+	try {	
+    Thread.sleep(100);}         
+    catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+	map[j][i] = '1';
+	map[j+1][i] ='4';}}
+
+/*else if (map[j][i]=='7' ){
+	int rand =(int) (Math.random() * ( 3 - 0 ));
+	switch (rand){
+	
+	case 0: if (map[j-1][i]=='1'){   //haut.monster
+			
+			map[j][i]='1';
+			try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+			map[j-1][i]='7';}
+	
+	case 1:	if (map[j+1][i]=='1'){   //bas.monster
+		
+		map[j][i]='1';
+		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+		map[j+1][i]='7';}
+	
+	case 2:	if (map[j][i-1]=='1'){   //gauche.monster
+		
+		map[j][i]='1';
+		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+		map[j][i-1]='7';}
+	
+	case 3:	if (map[j][i+1]=='1'){   //droite.monster
+			
+		map[j][i]='1';
+		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+		map[j][i+1]='7';}		   
+	}
+
+}*/
 
 	
 	

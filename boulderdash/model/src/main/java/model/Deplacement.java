@@ -25,6 +25,7 @@ public class Deplacement
 		int diams = 0;
 		int v = 1;
 		char bloc =0;
+		int gameover =0;
 		
             	
             
@@ -81,9 +82,20 @@ public class Deplacement
 			            System.out.println("found =" +found);
 			            break;
 			            }
-	            	
+	            		else if (levelmap[x+depX][y+depY] == '7')
+	            		{
+	            		levelmap[x][y] = '1';
+			            levelmap[x+depX][y+depY] = '7';	
+	            		found =0;
+	            		gameover =1;
+			            System.out.println("found =" +found);
+			            break;
+			            }
+	            		else if (gameover == 1){
+	            		System.out.println("perdu");
+	            	}
 	                found =1;
-			        System.out.println("found =" +found);	
+			        System.out.println("found =" +found);
 		            break;
 	            	}
 	            	/*else if (levelmap[x][y]=='5' ){
@@ -103,6 +115,19 @@ public class Deplacement
 	            
 	            	}
 	            	}
+System.out.println("gameover = "+gameover);
+
+if (gameover == 1){System.out.println("t'es nul fils de pute");
+for(int i = 0; i < 20; i++) {
+    for(int j =0;  j< 20; j++) {
+    	if (levelmap[i][j]=='3'){levelmap[i][j]='0';}
+    	if (levelmap[i][j]=='2'){levelmap[i][j]='0';}
+    	if (levelmap[i][j]=='1'){levelmap[i][j]='0';}
+    	if (levelmap[i][j]=='5'){levelmap[i][j]='0';}
+    	if (levelmap[i][j]=='4'){levelmap[i][j]='0';}
+    	if (levelmap[i][j]=='7'){levelmap[i][j]='0';}
+    }}
+}
 	            	
 	            	
 	            
