@@ -2,6 +2,7 @@ package model;
 
 public class Deplacement 
 {
+	public static int nbrDiamonds = 0;
 	public static char[][] move(int a, char[][] levelmap){
 		//System.out.println("Move !");
 		
@@ -75,7 +76,9 @@ public class Deplacement
 	            		else if (levelmap[x+depX][y+depY] == '4')
 	            		{
 	            		levelmap[x][y] = '1';
-			            levelmap[x+depX][y+depY] = '6';	
+			            levelmap[x+depX][y+depY] = '6';
+			            ++nbrDiamonds;
+			            System.out.println("nbrDiamonds =" +nbrDiamonds);
 	            		v = 1;
 			            System.out.println("diams =" +diams);
 	            		found =1;
