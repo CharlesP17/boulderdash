@@ -25,7 +25,7 @@ public class DisplayElements extends JPanel implements KeyListener {
 private static final long serialVersionUID = 1L;
 int monster =0;
 public char[][] map;
-int gameover= 0;
+public static int gameover= 0;
 public DisplayElements(){
 
 	
@@ -93,19 +93,62 @@ if (map[j][i]=='5' ){
 		if (map[j+1][i]=='1' && map[j+2][i]=='6'){
     		map[j][i] = '1';
     		map[j+1][i]= '1';
-    		map[j+2][i] = '5';}
+    		map[j+2][i] = '5';
+    		gameover = 1;}
 		
-		else if (map[j+1][i]=='5' && map[j][i+1]=='1' && map[j+1][i+1] =='6'){
-				map[i][j]='1';
-				map[j+1][i+1] ='5';}
-		else if (map[j+1][i]=='5' && map[j][i+1]=='1' && map[j+1][i+1] =='1'){
-			map[i][j]='1';
-			map[j+1][i+1] ='5';}
+		else if (map[j+1][i]=='5'  && map[j][i+1]=='1' && map[j+1][i+1]=='1'){
+			map[j][i]='1';
+			map[j][i+1] ='5';
+			}
+		else if (map[j+1][i]=='5'   && map[j][i-1]=='1'&& map[j+1][i-1]=='1'){
+			map[j][i]='1';
+			map[j][i-1] ='5';
+			}
+		else if (map[j+1][i]=='5'   && map[j][i+1]=='1' && map[j+1][i+1]=='6'){
+			map[j][i]='1';
+			map[j+1][i+1] ='5';
+			
+			gameover = 1;
+			}
+		else if (map[j+1][i]=='5'  && map[j][i-1]=='1'&& map[j+1][i-1]=='6'){
+			map[j][i]='1';
+			map[j+1][i-1] ='5';
+			gameover = 1;
+			}
+		else if (map[j+1][i]=='4'  && map[j][i+1]=='1' && map[j+1][i+1]=='1'){
+			map[j][i]='1';
+			map[j][i+1] ='5';
+			}
+		else if (map[j+1][i]=='4'   && map[j][i-1]=='1'&& map[j+1][i-1]=='1'){
+			map[j][i]='1';
+			map[j][i-1] ='5';
+			}
+		else if (map[j+1][i]=='4'   && map[j][i+1]=='1' && map[j+1][i+1]=='6'){
+			map[j][i]='1';
+			map[j+1][i+1] ='5';
+			gameover = 1;
+			}
+		else if (map[j+1][i]=='4'  && map[j][i-1]=='1'&& map[j+1][i-1]=='6'){
+			map[j][i]='1';
+			map[j+1][i-1] ='5';
+			gameover = 1;
+			}
 		else if (map[j+1][i]=='1'){
-					map[j][i] = '1';
-					map[j+1][i]= '5';
+				map[j][i] = '1';
+				map[j+1][i]= '5';
 					}
-		
+if (gameover == 1 )
+	{for(int m = 0; m < 20; m++) {
+		  for(int t =0;  t< 20; t++) {
+			  
+			  	if (map[m][t]=='6'){map[m][t]='8';}
+		    	if (map[m][t]=='3'){map[m][t]='8';}
+		    	if (map[m][t]=='2'){map[m][t]='8';}
+		    	if (map[m][t]=='1'){map[m][t]='8';}
+		    	if (map[m][t]=='5'){map[m][t]='8';}
+		    	if (map[m][t]=='4'){map[m][t]='8';}
+		    	if (map[m][t]=='7'){map[m][t]='8';}
+		    }}}		
 		
 }
 else if (map[j][i]=='4' ){
