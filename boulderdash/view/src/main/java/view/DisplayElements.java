@@ -106,6 +106,7 @@ if (map[j][i]=='5' ){
 			}
 		else if (map[j+1][i]=='5'   && map[j][i+1]=='1' && map[j+1][i+1]=='6'){
 			map[j][i]='1';
+			
 			map[j+1][i+1] ='5';
 			
 			gameover = 1;
@@ -137,6 +138,10 @@ if (map[j][i]=='5' ){
 				map[j][i] = '1';
 				map[j+1][i]= '5';
 					}
+		else if (map[j+1][i]=='7'){
+			map[j][i] = '1';
+			map[j+1][i]= '4';
+				}
 if (gameover == 1 )
 	{for(int m = 0; m < 20; m++) {
 		  for(int t =0;  t< 20; t++) {
