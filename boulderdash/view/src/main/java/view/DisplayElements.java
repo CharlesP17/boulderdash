@@ -142,7 +142,32 @@ if (map[j][i]=='5' ){
 			map[j][i] = '1';
 			map[j+1][i]= '4';
 				}
-if (gameover == 1 )
+		if (gameover == 1 )
+		{for(int m = 0; m < 20; m++) {
+			  for(int t =0;  t< 20; t++) {
+				  
+				  	if (map[m][t]=='6'){map[m][t]='8';}
+			    	if (map[m][t]=='3'){map[m][t]='8';}
+			    	if (map[m][t]=='2'){map[m][t]='8';}
+			    	if (map[m][t]=='1'){map[m][t]='8';}
+			    	if (map[m][t]=='5'){map[m][t]='8';}
+			    	if (map[m][t]=='4'){map[m][t]='8';}
+			    	if (map[m][t]=='7'){map[m][t]='8';}
+			    }}}		
+		
+}
+else if (map[j][i]=='4' ){
+	if (map[j+1][i]=='1' && map[j+2][i]=='6'){
+		map[j][i] = '1';
+		map[j+1][i]= '1';
+		map[j+2][i] = '4';
+		gameover = 1;}
+	else if (map[j+1][i] =='1')
+	{
+	map[j][i] = '1';
+	map[j+1][i] ='4';}
+	
+	if (gameover == 1 )
 	{for(int m = 0; m < 20; m++) {
 		  for(int t =0;  t< 20; t++) {
 			  
@@ -153,18 +178,7 @@ if (gameover == 1 )
 		    	if (map[m][t]=='5'){map[m][t]='8';}
 		    	if (map[m][t]=='4'){map[m][t]='8';}
 		    	if (map[m][t]=='7'){map[m][t]='8';}
-		    }}}		
-		
-}
-else if (map[j][i]=='4' ){
-	if (map[j+1][i]=='1' && map[j+2][i]=='6'){
-		map[j][i] = '1';
-		map[j+1][i]= '1';
-		map[j+2][i] = '4';}
-	else if (map[j+1][i] =='1')
-	{
-	map[j][i] = '1';
-	map[j+1][i] ='4';}}
+		    }}}	}
 
 else if (map[j][i]=='7' ){
 	int rand =(int) (Math.random() * ( 4 - 0 ));
