@@ -34,7 +34,7 @@ try
 {
 	cn = DriverManager.getConnection(url, login, passwd);
 	st = (Statement) cn.createStatement();
-	String sql = "call GetMap(4)";
+	String sql = "call GetMap(1)";
 	rs = st.executeQuery(sql);
 	while (rs.next()){
 		wordmap=rs.getString("Map");}

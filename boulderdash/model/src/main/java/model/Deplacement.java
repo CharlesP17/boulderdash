@@ -120,15 +120,16 @@ public class Deplacement
 	            	}
 System.out.println("gameover = "+gameover);
 
-if (gameover == 1){System.out.println("t'es nul fils de pute");
+if (nbrDiamonds == 10){System.out.println("You win");
 for(int i = 0; i < 20; i++) {
     for(int j =0;  j< 20; j++) {
-    	if (levelmap[i][j]=='3'){levelmap[i][j]='0';}
-    	if (levelmap[i][j]=='2'){levelmap[i][j]='0';}
-    	if (levelmap[i][j]=='1'){levelmap[i][j]='0';}
-    	if (levelmap[i][j]=='5'){levelmap[i][j]='0';}
-    	if (levelmap[i][j]=='4'){levelmap[i][j]='0';}
-    	if (levelmap[i][j]=='7'){levelmap[i][j]='0';}
+    	if (levelmap[i][j]=='3'){levelmap[i][j]='8';}
+    	if (levelmap[i][j]=='2'){levelmap[i][j]='8';}
+    	if (levelmap[i][j]=='1'){levelmap[i][j]='8';}
+    	if (levelmap[i][j]=='5'){levelmap[i][j]='8';}
+    	if (levelmap[i][j]=='4'){levelmap[i][j]='8';}
+    	if (levelmap[i][j]=='7'){levelmap[i][j]='8';}
+    	if (levelmap[i][j]=='6'){levelmap[i][j]='8';}
     }}
 }
 //test commit

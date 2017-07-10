@@ -25,6 +25,7 @@ public class DisplayElements extends JPanel implements KeyListener {
 private static final long serialVersionUID = 1L;
 int monster =0;
 public char[][] map;
+int gameover= 0;
 public DisplayElements(){
 
 	
@@ -91,9 +92,7 @@ if (map[j][i]=='5' ){
 		if (map[j+1][i] =='1')
 		{
 		
-		try {	
-	    Thread.sleep(100);}         
-	    catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+		
 		map[j][i] = '1';
 		map[j+1][i] ='5';}
 		else if (map[j+1][i] =='6')
@@ -115,8 +114,8 @@ else if (map[j][i]=='4' ){
 	map[j][i] = '1';
 	map[j+1][i] ='4';}}
 
-/*else if (map[j][i]=='7' ){
-	int rand =(int) (Math.random() * ( 3 - 0 ));
+else if (map[j][i]=='7' ){
+	int rand =(int) (Math.random() * ( 4 - 0 ));
 	switch (rand){
 	
 	case 0: if (map[j-1][i]=='1'){   //haut.monster
@@ -124,27 +123,48 @@ else if (map[j][i]=='4' ){
 			map[j][i]='1';
 			try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 			map[j-1][i]='7';}
+	else if (map[j-1][i]=='6'){gameover =1;}
+			break;
 	
 	case 1:	if (map[j+1][i]=='1'){   //bas.monster
 		
 		map[j][i]='1';
 		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 		map[j+1][i]='7';}
+	else if (map[j+1][i]=='6'){gameover =1;}
+	break;
 	
 	case 2:	if (map[j][i-1]=='1'){   //gauche.monster
 		
 		map[j][i]='1';
 		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 		map[j][i-1]='7';}
+	else if (map[j][i-1]=='6'){gameover =1;}
+	break;
 	
 	case 3:	if (map[j][i+1]=='1'){   //droite.monster
 			
 		map[j][i]='1';
 		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
-		map[j][i+1]='7';}		   
+		map[j][i+1]='7';}
+	else if (map[j][i+1]=='6'){gameover =1;}
+		break;
+	
+	
 	}
+	if (gameover == 1 )
+	{for(int m = 0; m < 20; m++) {
+	  for(int t =0;  t< 20; t++) {
+		  	if (map[m][t]=='6'){map[m][t]='8';}
+	    	if (map[m][t]=='3'){map[m][t]='8';}
+	    	if (map[m][t]=='2'){map[m][t]='8';}
+	    	if (map[m][t]=='1'){map[m][t]='8';}
+	    	if (map[m][t]=='5'){map[m][t]='8';}
+	    	if (map[m][t]=='4'){map[m][t]='8';}
+	    	if (map[m][t]=='7'){map[m][t]='8';}
+	    }}}
+}
 
-}*/
 
 	
 	
@@ -165,6 +185,7 @@ catch(IOException e)
     	System.out.println("");
 		}*/
 }
+
 public void setMAP(char[][] map, DisplayElements panelwindow)
 {
 	this.map=map;
