@@ -53,6 +53,11 @@ catch (SQLException e) {
 	
 
 }
+public String getWordmap() {
+	return wordmap;
+}
+
+
 public void split(){
 	this.levelmap = new char[20][20];
 	String str = this.wordmap;

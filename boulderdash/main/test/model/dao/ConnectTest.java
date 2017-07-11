@@ -10,6 +10,7 @@ import org.junit.Test;
 
 public class ConnectTest {
 	
+	 Connect connect = new Connect() ;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,10 +28,10 @@ public class ConnectTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	/*@Test
 	public void testConnect() {
-		//fail("Not yet implemented");
-	}
+		fail("Not yet implemented");
+	}*/
 
 	@Test
 	public void testConnection() {
@@ -44,7 +45,10 @@ public class ConnectTest {
 
 	@Test
 	public void testSplit() {
-		//fail("Not yet implemented");
+		
+		final int expected = 420;
+		
+		assertEquals(expected, this.connect.getWordmap().length());
 	}
 
 }
