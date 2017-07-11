@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Move the player in the level
+ * @author Charles
+ *
+ */
 public class Deplacement 
 {
 	public static int nbrDiamonds = 0;
@@ -11,10 +16,10 @@ public class Deplacement
 		int depX = 0;
 		int depY = 0;
 		switch(a) {
-			case 1: depX=0; depY=-1; break; //gauche
-			case 2:depX=0; depY=1; break; //droite
-			case 3: depX=1; depY=0; break; //bas
-			case 4: depX=-1; depY=0;break; //haut
+			case 1: depX=0; depY=-1; break; //left
+			case 2:depX=0; depY=1; break; //right
+			case 3: depX=1; depY=0; break; //down
+			case 4: depX=-1; depY=0;break; //up
 			default:break;
 		}
 		 System.out.println(depX);
@@ -87,7 +92,7 @@ public class Deplacement
 			            System.out.println("found =" +found);
 			            break;
 			            }
-	            		else if (levelmap[x+depX][y+depY] == '7')
+	            		/*else if (levelmap[x+depX][y+depY] == '7')
 	            		{
 	            		levelmap[x][y] = '1';
 			            levelmap[x+depX][y+depY] = '7';	
@@ -95,7 +100,7 @@ public class Deplacement
 	            		gameover =1;
 			            System.out.println("found =" +found);
 			            break;
-			            }
+			            }*/
 	            		else if (gameover == 1){
 	            		System.out.println("perdu");
 	            	}
@@ -143,13 +148,8 @@ for(int i = 0; i < 20; i++) {
     	if (levelmap[i][j]=='6'){levelmap[i][j]='8';}
     }}
 }
-//test commit
-	            	
-	            
-	            
-	  
-	               
-	       
+
+
 			return levelmap;
 }
 	
