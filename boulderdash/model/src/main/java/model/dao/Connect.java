@@ -13,28 +13,33 @@ public class Connect
 {   
 	public char levelmap[][];
 	public String wordmap = null;
-
+	static int idlevel = 2;
+	
 public Connect(){
 	
-	this.Connection();
+	
+	this.Connection(); 
+	
 }
 
 
 public void Connection()
 {
-	String url = "jdbc:mysql://localhost/boulderdash_1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	String url = "jdbc:mysql://localhost/boulderdash?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	String login ="root";
 	String passwd= "";
 	Connection cn = null;
 	Statement st = null;
 	ResultSet rs =null;
+	
+	
 
 
 try 
 {
 	cn = DriverManager.getConnection(url, login, passwd);
 	st = (Statement) cn.createStatement();
-	String sql = "call GetMap(4)";
+	String sql = "call GetMap("+idlevel+")";
 	rs = st.executeQuery(sql);
 	while (rs.next()){
 		wordmap=rs.getString("Map");}

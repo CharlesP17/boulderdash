@@ -18,7 +18,7 @@ import model.dao.Connect;
 public abstract class Main {
 	
 	
-
+	
 
     /**
      * The main method.
@@ -27,6 +27,8 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
+    	
+    	//int idlevel =1;
     	
         //Connect connection = new Connect();
     	//Connect con = new Connect();
@@ -45,5 +47,7 @@ public abstract class Main {
         
     
     }
+    
+    
 }
 
