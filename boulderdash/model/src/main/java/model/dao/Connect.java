@@ -56,15 +56,9 @@ public void split(){
 	for(int y = 0; y<20;y++){
 		levelmap[x][y]=splitArray[x].charAt(y);}}
 	
-/*for(int i = 0; i < this.levelmap.length; i++) {
-for(int j =0; j < this.levelmap.length; j++) {
-System.out.print(this.levelmap[i][j]);}
-System.out.println("");}*/
+
 }
 
 
 
-/*public String Getmap() {
-	return this.wordmap;
-	
-}*/}
+}
