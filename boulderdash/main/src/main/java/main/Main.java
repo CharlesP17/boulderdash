@@ -1,15 +1,13 @@
 package main;
 
-import java.sql.SQLException;
+
 
 import controller.Controller;
-import controller.ControllerFacade;
-import model.ModelFacade;
+
+
 
 import model.dao.Connect;
-import view.DisplayElements;
-import view.ViewFacade;
-import view.Window;
+
 
 /**
  * <h1>The Class Main.</h1>

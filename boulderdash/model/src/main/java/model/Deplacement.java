@@ -3,6 +3,7 @@ package model;
 public class Deplacement 
 {
 	public static int nbrDiamonds = 0;
+	public static int win = 0;
 	public static char[][] move(int a, char[][] levelmap){
 		//System.out.println("Move !");
 		
@@ -24,9 +25,10 @@ public class Deplacement
 		int rock=0;
 		int wall=0;
 		int diams = 0;
-		int v = 1;
-		char bloc =0;
+		int v = 0;
+		//char bloc =0;
 		int gameover =0;
+		//int win =0;
 		
             	
             
@@ -97,6 +99,12 @@ public class Deplacement
 	            		else if (gameover == 1){
 	            		System.out.println("perdu");
 	            	}
+	            	else if (levelmap[x+depX][y+depY] == 'v')
+	            	{
+	            		
+	            	win = 1;
+	            	System.out.println("win =" +win);
+	            	break;}
 	                found =1;
 			        System.out.println("found =" +found);
 		            break;
@@ -118,11 +126,14 @@ public class Deplacement
 	            
 	            	}
 	            	}
-System.out.println("gameover = "+gameover);
 
-if (nbrDiamonds == 10){System.out.println("You win");
+
+if (nbrDiamonds == 1){System.out.println("find the door");
+levelmap[1][1]= 'v';}
+if (win == 1){System.out.println("WIN");
 for(int i = 0; i < 20; i++) {
     for(int j =0;  j< 20; j++) {
+    	if (levelmap[i][j]=='v'){levelmap[i][j]='8';}
     	if (levelmap[i][j]=='3'){levelmap[i][j]='8';}
     	if (levelmap[i][j]=='2'){levelmap[i][j]='8';}
     	if (levelmap[i][j]=='1'){levelmap[i][j]='8';}

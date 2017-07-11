@@ -54,36 +54,40 @@ try{
 switch (map[j][i])
 {
 case '1':
-Image img1 = ImageIO.read(new File("1.jpg"));
+Image img1 = ImageIO.read(new File("11.jpg"));
 g.drawImage(img1, i*16, j*16, null);
 break;
 case '2':
-Image img2 = ImageIO.read(new File("2.jpg"));
+Image img2 = ImageIO.read(new File("22.jpg"));
 g.drawImage(img2, i*16, j*16, null);
 break;
 case '3':
-Image img3 = ImageIO.read(new File("3.jpg"));
+Image img3 = ImageIO.read(new File("33.jpg"));
 g.drawImage(img3, i*16, j*16, null);
 break;
 case '4':
-Image img4 = ImageIO.read(new File("4.jpg"));
+Image img4 = ImageIO.read(new File("44.jpg"));
 g.drawImage(img4, i*16, j*16, null);
 break;
 case '5':
-Image img5 = ImageIO.read(new File("5.jpg"));
+Image img5 = ImageIO.read(new File("55.jpg"));
 g.drawImage(img5, i*16, j*16, null);
 break;
 case '6':
-Image img6 = ImageIO.read(new File("6.jpg"));
+Image img6 = ImageIO.read(new File("66.jpg"));
 g.drawImage(img6, i*16, j*16, null);
 break;
 case '7':
-Image img7 = ImageIO.read(new File("7.jpg"));
+Image img7 = ImageIO.read(new File("77.jpg"));
 g.drawImage(img7, i*16, j*16, null);
 break;
 case '8':
 Image img8 = ImageIO.read(new File("8.jpg"));
 g.drawImage(img8, i*16, j*16, null);
+break;
+case 'v':
+Image imgv = ImageIO.read(new File("10.jpg"));
+g.drawImage(imgv, i*16, j*16, null);
 break;
 
 
@@ -145,7 +149,7 @@ if (map[j][i]=='5' ){
 		if (gameover == 1 )
 		{for(int m = 0; m < 20; m++) {
 			  for(int t =0;  t< 20; t++) {
-				  
+				    if (map[m][t]=='v'){map[m][t]='8';}
 				  	if (map[m][t]=='6'){map[m][t]='8';}
 			    	if (map[m][t]=='3'){map[m][t]='8';}
 			    	if (map[m][t]=='2'){map[m][t]='8';}
@@ -171,6 +175,7 @@ else if (map[j][i]=='4' ){
 	{for(int m = 0; m < 20; m++) {
 		  for(int t =0;  t< 20; t++) {
 			  
+			    if (map[m][t]=='v'){map[m][t]='8';}
 			  	if (map[m][t]=='6'){map[m][t]='8';}
 		    	if (map[m][t]=='3'){map[m][t]='8';}
 		    	if (map[m][t]=='2'){map[m][t]='8';}
@@ -187,7 +192,7 @@ else if (map[j][i]=='7' ){
 	case 0: if (map[j-1][i]=='1'){   //haut.monster
 			
 			map[j][i]='1';
-			try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+			//try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 			map[j-1][i]='7';}
 	else if (map[j-1][i]=='6'){gameover =1;}
 			break;
@@ -195,7 +200,7 @@ else if (map[j][i]=='7' ){
 	case 1:	if (map[j+1][i]=='1'){   //bas.monster
 		
 		map[j][i]='1';
-		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+		//try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 		map[j+1][i]='7';}
 	else if (map[j+1][i]=='6'){gameover =1;}
 	break;
@@ -203,7 +208,7 @@ else if (map[j][i]=='7' ){
 	case 2:	if (map[j][i-1]=='1'){   //gauche.monster
 		
 		map[j][i]='1';
-		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+		//try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 		map[j][i-1]='7';}
 	else if (map[j][i-1]=='6'){gameover =1;}
 	break;
@@ -211,7 +216,7 @@ else if (map[j][i]=='7' ){
 	case 3:	if (map[j][i+1]=='1'){   //droite.monster
 			
 		map[j][i]='1';
-		try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
+		//try {Thread.sleep(200);}catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 		map[j][i+1]='7';}
 	else if (map[j][i+1]=='6'){gameover =1;}
 		break;
@@ -221,6 +226,7 @@ else if (map[j][i]=='7' ){
 if (gameover == 1 )
 	{for(int m = 0; m < 20; m++) {
 	  for(int t =0;  t< 20; t++) {
+		  	if (map[m][t]=='v'){map[m][t]='8';}
 		  	if (map[m][t]=='6'){map[m][t]='8';}
 	    	if (map[m][t]=='3'){map[m][t]='8';}
 	    	if (map[m][t]=='2'){map[m][t]='8';}
