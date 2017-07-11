@@ -17,10 +17,6 @@ import javax.imageio.ImageIO;
 
 
 
-
-//test
-
-
 public class DisplayElements extends JPanel implements KeyListener {
 private static final long serialVersionUID = 1L;
 int monster =0;
