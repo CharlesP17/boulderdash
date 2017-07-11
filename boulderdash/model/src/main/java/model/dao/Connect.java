@@ -6,7 +6,11 @@ import java.sql.SQLException;
 
 import com.mysql.cj.api.jdbc.Statement;
 
-
+/**
+ * Class that reads from the database and put the data in a Table
+ * @author Florentin
+ *
+ */
 
 
 public class Connect
@@ -23,6 +27,9 @@ public Connect(){
 }
 
 
+/**
+ * Connection to the database
+ */
 public void Connection()
 {
 	String url = "jdbc:mysql://localhost/boulderdash?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -53,11 +60,15 @@ catch (SQLException e) {
 	
 
 }
+
 public String getWordmap() {
 	return wordmap;
 }
 
 
+/**
+ * Filling of a 20 by 20 table with the data
+ */
 public void split(){
 	this.levelmap = new char[20][20];
 	String str = this.wordmap;
